@@ -24,14 +24,14 @@ public class Main{
                     while(time > 0) {
                         time--;
                         // db results
-                        // from async request publish when done ie initiate a bunch
+                        // from sync request publish when done 
                         emitter.onNext(db.select("select * from user").getAs(String.class).toBlocking().single());
 
                         emitter.onNext("BLOCKING AFTER SYNC");
                         Thread.sleep(100);
 
                         emitter.onNext(adb.select("select * from user").getAs(String.class).limit(1).toBlocking().single());
-                        // sync result that will block
+                        // async request
 
                         emitter.onNext("BLOCKING AFTER ASYNC");
                         Thread.sleep(100);
