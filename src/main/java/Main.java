@@ -16,9 +16,9 @@ public class Main{
         init();
         // poll connections and print out all messages async
         Map<Session, Flowable<String>> sessions = SocketWrapper.getConnections();
-        while(true){
+        while (true) {
             int socketcount = 0;
-            for(Session session: sessions.keySet()){
+            for (Session session : sessions.keySet()) {
                 socketcount++;
                 int mycount = socketcount;
                 // get the flowable of messages
@@ -27,11 +27,12 @@ public class Main{
                 //source_one.subscribeOn(Schedulers.newThread()).subscribe((String s) -> {
                 //        System.out.println("Subscriber "+mycount+" "+s);
                 //});
-                source_one.subscribe((String s) -> {
-                    System.out.println("Subscriber "+mycount+" "+s);
-                });
+                //source_one.subscribe((String s) -> {
+                //        System.out.println("Subscriber " + mycount + " " + s);
+                //});
+
+                Thread.sleep(TimeUnit.MILLISECONDS.toMillis(10));
             }
-            Thread.sleep(TimeUnit.MILLISECONDS.toMillis(10));
         }
     }
 
