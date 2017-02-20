@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 java_binary(
-    name = "main",
+    name = "hop",
     srcs = glob(["**/*.java"]),
     main_class = "Main",
     deps = [
