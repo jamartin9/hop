@@ -6,8 +6,8 @@ java_binary(
     main_class = "Main",
     deps = [
         ":lib",
-        "//3rdpartydeps:com_sparkjava_spark_core",
-        "//3rdpartydeps:io_reactivex_rxjava2_rxjava",
+        "//3rdpartydeps-java:com_sparkjava_spark_core",
+        "//3rdpartydeps-java:io_reactivex_rxjava2_rxjava",
     ],
 )
 
@@ -19,7 +19,7 @@ java_library(
         exclude = ["**/Main.java"],
     ),
     deps = [
-        "//3rdpartydeps:io_reactivex_rxjava2_rxjava",
-        "//3rdpartydeps:org_eclipse_jetty_websocket_websocket_api",
+        "//3rdpartydeps-java:io_reactivex_rxjava2_rxjava",
+        "//3rdpartydeps-java:org_eclipse_jetty_websocket_websocket_api",
     ],
 )
